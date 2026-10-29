@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-reset-guardian"
+version = "0.1.0"
+description = "Protect expiring banked Codex resets with reminders and opt-in safe redemption."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Abdulaziz Alsuwailem"}]
+keywords = ["codex", "openai", "notifications", "self-hosted", "automation"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/8valet/codex-reset-guardian"
+Repository = "https://github.com/8valet/codex-reset-guardian"
+Issues = "https://github.com/8valet/codex-reset-guardian/issues"
+Changelog = "https://github.com/8valet/codex-reset-guardian/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+desktop = ["desktop-notifier>=6.2,<7"]
+
+[project.scripts]
+reset-guardian = "codex_reset_guardian.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

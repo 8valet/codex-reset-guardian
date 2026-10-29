@@ -1,0 +1,41 @@
+[guardian]
+redeem_before_seconds = 90
+preflight_before_seconds = 300
+network_retry_seconds = 10
+poll_far_seconds = 1800
+poll_day_seconds = 600
+poll_hour_seconds = 120
+poll_ten_min_seconds = 30
+
+[reminders]
+enabled = true
+checkpoints_seconds = [86400, 21600, 5400, 900]
+
+# Desktop requires: pipx install '.[desktop]' (or pip install with the desktop extra).
+[notifications.desktop]
+enabled = false
+
+[notifications.ntfy]
+enabled = false
+url = "https://ntfy.sh/your-topic"
+token = "env:NTFY_TOKEN"
+
+[notifications.gotify]
+enabled = false
+url = "https://gotify.example.com"
+token = "env:GOTIFY_TOKEN"
+
+[notifications.telegram]
+enabled = false
+bot_token = "env:TELEGRAM_BOT_TOKEN"
+chat_id = "123456789"
+
+[notifications.discord]
+enabled = false
+webhook_url = "env:DISCORD_WEBHOOK_URL"
+
+[notifications.webhook]
+enabled = false
+url = "https://example.com/hooks/codex-reset"
+[notifications.webhook.headers]
+Authorization = "env:GENERIC_WEBHOOK_AUTH"
